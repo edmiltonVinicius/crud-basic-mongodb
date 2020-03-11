@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title><%= title %></title>
+</head>
+
+<body>
+    <h1>Cadastro</h1>
+    <form action="/cadastro" method="post">
+        <p>Preencha os dados abaixo para salvar um item.</p>
+        <p>Nome</p>
+        <input type="text" name="nome">
+        <p>Quantidade</p>
+        <input type="number" name="quantidade">
+        <p>
+        <button type="submit" onclick="return confirm('Confimra o Cadastro?')">Salvar</button>
+        <a href="/">Cancelar</a>
+        </p>
+    </form>
+
+</body>
+
+</html>

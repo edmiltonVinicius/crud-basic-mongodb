@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1>Alteração de Cadastro</h1>  
+    <p>Prooduto: <%= produto%></p>
+    <p>Quantidade: <%= quantidade %></p>
+    
+    <form action="/alterar" method="post">
+        <p>
+            Novo Nome: 
+            <input type="text" name="novoNome">
+        </p>
+        <p>
+            Nova Quantidade:
+            <input type="number" name="novaQuantidade">
+        </p>
+        <button type="submit" onclick="return confirm('Confirma a Alteração?')">Alterar</button>
+        <a href="/">Voltar</a>
+    </form>
+</body>
+</html>

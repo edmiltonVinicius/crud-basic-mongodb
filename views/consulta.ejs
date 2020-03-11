@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %>></title>
+</head>
+<body>
+    <h1>Consulta de produtos</h1>
+
+    <form action="/consulta" method="post">
+    <p>
+        Produto:
+        <input type="text" name="produto">
+    </p>
+    <button type="submit">Consultar</button>
+    <a href="/">Inicio</a>
+    </form>
+
+    <p>Produto: <%= produto %></p>
+    <p>Quantidade: <%= quantidade %></p>
+
+</body>
+</html>

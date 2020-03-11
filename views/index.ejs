@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Tela Inicial</title>
+</head>
+<body>
+
+    <h1>Produtos Cadastrados: <%= cadastrados %></h1>
+    <table style="width: 500px";>
+        <thead>
+            <tr style="background-color: rgb(95, 91, 91); color: #fff"">
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Excluir</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(!docs || docs.lenght == 0){ %>
+                    <tr>
+                        <td>
+                            Nenhum intem cadastrado
+                        </td>
+                    </tr>
+            <% }else { 
+                docs.forEach((intem) =>{ %>
+                    <tr>
+                        <td><%= intem.nome %></td>
+                        <td><%= intem.quantidade %></td>
+                        <td><a href="/delete/<%= intem._id %>" onclick="return confirm('Confirma a exclusão?')">X</a></td>
+                        <td><a href="/alterar/<%= intem._id %>/<%=intem.nome%>/<%=intem.quantidade%>/">X</a></td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <a href="/cadastro">Cadastrar</a>
+                </td>
+                <td>
+                    <a href="/consulta">Consultar</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
